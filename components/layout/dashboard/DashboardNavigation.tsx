@@ -6,7 +6,11 @@ const DashboardNavigation = () => {
 	return (
 		<>
 			{dashboardLinks.map((link) => (
-				<Link href={link.href} key={link.href}>
+				<Link
+					href={link.href}
+					key={link.href}
+					className='capitalize font-medium md:font-semibold'
+				>
 					{link.name}
 				</Link>
 			))}
