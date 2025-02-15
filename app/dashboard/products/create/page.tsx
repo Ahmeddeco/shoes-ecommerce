@@ -3,6 +3,7 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
+	CardFooter,
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card'
@@ -17,7 +18,7 @@ import {
 } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
 import { Textarea } from '@/components/ui/textarea'
-import UploadThings from '@/components/UploadThings'
+import UploadThings from '@/components/layout/admin/UploadThings'
 import { ChevronLeft } from 'lucide-react'
 import Form from 'next/form'
 import Link from 'next/link'
@@ -83,6 +84,9 @@ export default function CreateProductPage() {
 						</div>
 					</div>
 				</CardContent>
+				<CardFooter>
+					<Button>Create Product</Button>
+				</CardFooter>
 			</Card>
 		</Form>
 	)

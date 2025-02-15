@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin'
 
 import localFont from 'next/font/local'
+import { extractRouterConfig } from 'uploadthing/server'
+import { ourFileRouter } from './api/uploadthing/core'
 
 const geist = localFont({
 	src: '../public/fonts/Geist.ttf',
@@ -20,7 +23,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${geist.className} antialiased`}>{children}</body>
+			<body className={`${geist.className} antialiased`}>
+				<NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+				{children}
+			</body>
 		</html>
 	)
 }
