@@ -1,4 +1,4 @@
-import OrdersCard from '@/components/layout/orders/OrdersCard'
+import OrdersCard from '@/components/layout/admin/orders/OrdersCard'
 
 export default function OrdersPage() {
 	return (

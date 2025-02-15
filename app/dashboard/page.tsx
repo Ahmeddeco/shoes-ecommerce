@@ -1,5 +1,5 @@
-import DashboardCard from '@/components/layout/dashboard/DashboardCard'
-import RecentSalesAvatar from '@/components/layout/dashboard/RecentSalesAvatar'
+import DashboardCard from '@/components/layout/admin/dashboard/DashboardCard'
+import RecentSalesAvatar from '@/components/layout/admin/dashboard/RecentSalesAvatar'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import {
 	Card,

@@ -1,4 +1,4 @@
-import DashboardHeader from '@/components/layout/dashboard/DashboardHeader'
+import DashboardHeader from '@/components/layout/admin/dashboard/DashboardHeader'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import { redirect } from 'next/navigation'
 
@@ -10,7 +10,7 @@ export default async function DashboardLayout({
 	const { getUser } = getKindeServerSession()
 	const user = await getUser()
 
-	if (!user || user.email !== 'hetetlahma@gmail.com') {
+	if (!user || user.email !== process.env.SUPER_ADMIN_EMAIL) {
 		return redirect('/')
 	}
 
