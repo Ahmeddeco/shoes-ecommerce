@@ -1,4 +1,4 @@
-export const dashboardLinks = [
+export const links = [
   {
     name: 'dashboard',
     href: '/dashboard'
@@ -15,5 +15,4 @@ export const dashboardLinks = [
     name: 'categories',
     href: '/dashboard/categories'
   },
-
 ]

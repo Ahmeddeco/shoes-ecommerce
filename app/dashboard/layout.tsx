@@ -1,23 +1,18 @@
-import DashboardHeader from '@/components/layout/admin/dashboard/DashboardHeader'
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
-import { redirect } from 'next/navigation'
+import DashboardNavigation from '@/components/layout/dashboard/DashboardNavigation'
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	const { getUser } = getKindeServerSession()
-	const user = await getUser()
-
-	if (!user || user.email !== process.env.SUPER_ADMIN_EMAIL) {
-		return redirect('/')
-	}
-
 	return (
-		<div className='flex w-full flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 '>
-			<DashboardHeader />
-			<main className='my-5'>{children}</main>
-		</div>
+		<section className='flex w-full flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+			<header className='sticky top-0 flex h-16 z-50 items-center justify-between gap-4 border-b bg-white '>
+				<nav className='hidden font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6'>
+					<DashboardNavigation />
+				</nav>
+			</header>
+			{children}
+		</section>
 	)
 }
