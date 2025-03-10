@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin'
+import { extractRouterConfig } from 'uploadthing/server'
+import { ourFileRouter } from './api/uploadthing/core'
 
 const inter = localFont({
 	src: '../public/fonts/Inter-Variable.ttf',
@@ -19,7 +22,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body className={`${inter.className} antialiased`}>{children}</body>
+			<body className={`${inter.className} antialiased`}>
+				<NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+				{children}
+			</body>
 		</html>
 	)
 }

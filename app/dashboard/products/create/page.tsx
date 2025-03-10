@@ -1,3 +1,4 @@
+import OurUploadDropzone from '@/components/layout/admin/OurUploadDropzone'
 import { Button } from '@/components/ui/button'
 import {
 	Card,
@@ -83,6 +84,11 @@ export default function CreatePage() {
 									</SelectItem>
 								</SelectContent>
 							</Select>
+						</div>
+
+						<div className='flex flex-col gap-3'>
+							<Label>Images</Label>
+							<OurUploadDropzone />
 						</div>
 					</div>
 				</CardContent>
