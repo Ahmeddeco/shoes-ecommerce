@@ -23,9 +23,9 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body className={`${inter.className} antialiased`}>
-				<NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-				{children}
-			</body>
+			<NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+				
+				{children}</body>
 		</html>
 	)
 }
